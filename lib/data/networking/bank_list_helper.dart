@@ -33,7 +33,7 @@ class BankListHelper{
 
       }
 
-      responseJson = returnResponse(response);
+      responseJson = bankList; //returnResponse(response);
 
 
     } on SocketException {

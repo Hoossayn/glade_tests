@@ -63,14 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
     _bankListState.getAllBanks(path: 'resources', body: _map).then((value){
       _loader.hideLoader().then((_){
         setState(() {
-          print('Bank name ${value}');
+          print('All Banks ${value}');
 
-        /*  for(final item in value.name[0]){
+          for(final item in value){
             //_bankList.add(item);
-            print('Bank name ${item}');
+            print('Bank item ${item}');
 
-          }*/
-        //  _bankList = value.name as List<Banks>;
+          }
+          _bankList = value;
         });
       });
     }).catchError((err){
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(height: 80),
-             // _supportedBanks(),
+              _supportedBanks(),
               SizedBox(height: 20),
               _accountNumberField(),
               SizedBox(height: 20),

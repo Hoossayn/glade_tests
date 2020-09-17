@@ -9,11 +9,8 @@ class Banks {
   @override
   String toString()=> "$runtimeType($code, $name)";
 
- /* Banks.fromJson(String code, String name)
-      : code = code,
-        name = name[0];*/
 
-  factory Banks.fromJson(dynamic json) {
+  factory Banks.fromJson(Map<String, dynamic> json) {
    return Banks(
        code : json['code'],
        name : json['name']
